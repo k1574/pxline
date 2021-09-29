@@ -1,0 +1,4 @@
+<$MKINCDIR/config
+LIBS = $MLIB
+PROGNAME = pxline
+CFILES = main.c
