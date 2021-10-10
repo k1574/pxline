@@ -28,7 +28,7 @@ main(int argc, char *argv[])
 	dlb = .05 ;
 	dx = x2 - x1 ;
 	dy = y2 - y1 ;
-	c = sqrt(dx*dx + dy+dy) ;
+	c = sqrt(dx*dx + dy*dy) ;
 
 	printf("%d %d\n", x1, y1);
 	px = x1 ; py = y1 ;
