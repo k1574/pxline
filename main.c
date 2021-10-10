@@ -34,13 +34,14 @@ main(int argc, char *argv[])
 	px = x1 ; py = y1 ;
 	l = dl ;
 	do{
+		start:
 		x = (float)x1 + (l/c) * dx ;
 		y = (float)y1 + (l/c) * dy ;
 
 		/* Every next point must differ max' for 1. */
 		while(abs(px - (int)x) > 1 || abs(py - (int)y) > 1){
 			l -= dlb ;
-			continue;
+			goto start;
 		}
 
 		/* Skip repeating values. */
