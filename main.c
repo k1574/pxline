@@ -24,7 +24,7 @@ main(int argc, char *argv[])
 	x2 = atoi(argv[3]) ;
 	y2 = atoi(argv[4]) ;
 	
-	dl = 1. ;
+	dl = 0.1 ;
 	dlb = .05 ;
 	dx = x2 - x1 ;
 	dy = y2 - y1 ;
