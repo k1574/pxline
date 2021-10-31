@@ -3,10 +3,12 @@
 #include <string.h>
 #include <math.h>
 
+char *argv0;
+
 void
 usage(void)
 {
-	fprintf(stderr, "usage: %s <x1> <y1> <x2> <y2>\n");
+	fprintf(stderr, "usage: %s <x1> <y1> <x2> <y2>\n", argv0);
 	exit(1);
 }
 
@@ -16,6 +18,7 @@ main(int argc, char *argv[])
 	int px, py, x1, y1, x2, y2, dx, dy;
 	float x, y, l, c, dl, dlb;
 
+	argv0 = argv[0] ;
 	if(argc!=5)
 		usage();
 
