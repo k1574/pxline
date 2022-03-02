@@ -12,30 +12,20 @@ usage(void)
 	exit(1);
 }
 
-int
-main(int argc, char *argv[])
+void
+printline(int x1, int y1, int x2, int y2)
 {
-	int px, py, x1, y1, x2, y2, dx, dy;
+	int px, py, dx, dy;
 	float x, y, l, c, dl, dlb;
-
-	argv0 = argv[0] ;
-	if(argc!=5)
-		usage();
-
-	x1 = atoi(argv[1]) ; 
-	y1 = atoi(argv[2]) ;
-	x2 = atoi(argv[3]) ;
-	y2 = atoi(argv[4]) ;
-	
+	px = x1 ; py = y1 ;
 	dl = 1 ;
-	dlb = .05 ;
+	dlb = dl/10 ;
 	dx = x2 - x1 ;
 	dy = y2 - y1 ;
 	c = sqrt(dx*dx + dy*dy) ;
 
-	printf("%d %d\n", x1, y1);
-	px = x1 ; py = y1 ;
 	l = dl ;
+	printf("%d %d\n", x1, y1);
 	do{
 		start:
 		x = (float)x1 + (l/c) * dx ;
@@ -57,7 +47,24 @@ main(int argc, char *argv[])
 	}while(l <= c);
 
 	if((int)x != x2 || (int)y!=y2)
-		printf("%d %d\n", x2, y2);	
+		printf("%d %d\n", x2, y2);
+}
+
+int
+main(int argc, char *argv[])
+{
+	int x1, y1, x2, y2;
+
+	argv0 = argv[0] ;
+	if(argc!=5)
+		usage();
+
+	x1 = atoi(argv[1]) ; 
+	y1 = atoi(argv[2]) ;
+	x2 = atoi(argv[3]) ;
+	y2 = atoi(argv[4]) ;
+	
+	printline(x1, y1, x2, y2);
 
 	return 0 ;
 }
